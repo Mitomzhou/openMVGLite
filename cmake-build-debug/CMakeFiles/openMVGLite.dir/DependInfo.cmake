@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/main.cpp" "/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/openMVGLite.dir/main.cpp.o"
+  "/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp" "/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

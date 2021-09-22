@@ -97,6 +97,9 @@
 		<Unit filename="/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/main.cpp">
 			<Option target="openMVGLite"/>
 		</Unit>
+		<Unit filename="/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp">
+			<Option target="openMVGLite"/>
+		</Unit>
 		<Unit filename="/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

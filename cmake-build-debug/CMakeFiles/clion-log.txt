@@ -1,18 +1,22 @@
 /opt/clion-2020.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite
--- The C compiler identification is GNU 9.3.0
--- The CXX compiler identification is GNU 9.3.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc - works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/c++
--- Check for working CXX compiler: /usr/bin/c++ - works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done
--- Generating done
--- Build files have been written to: /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug
+-- ----
+-- OpenMVG Find_Package
+-- ----
+-- Found OpenMVG version: 1.6.0
+-- Installed in: /usr/local
+-- ----
+-- Found installed version of Eigen: /usr/lib/cmake/eigen3
+-- Found required Ceres dependency: Eigen version 3.3.7 in /usr/include/eigen3
+-- Found required Ceres dependency: glog
+-- Found installed version of gflags: /usr/lib/x86_64-linux-gnu/cmake/gflags
+-- Detected gflags version: 2.2.2
+-- Found required Ceres dependency: gflags
+-- Found Ceres version: 1.13.0 installed in: /usr/local with components: [LAPACK, SuiteSparse, SparseLinearAlgebraLibrary, CXSparse, SchurSpecializations, OpenMP]
+CMake Error at CMakeLists.txt:15 (target_link_libraries):
+  Cannot specify link libraries for target "openMVGLite" which is not built
+  by this project.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/CMakeError.log".

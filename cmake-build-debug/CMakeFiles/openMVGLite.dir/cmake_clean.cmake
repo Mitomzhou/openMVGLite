@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/openMVGLite.dir/main.cpp.o"
+  "CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o"
   "openMVGLite"
   "openMVGLite.pdb"
 )

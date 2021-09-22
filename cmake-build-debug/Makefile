@@ -170,6 +170,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sfm/main_SfMInit_ImageListing.o: sfm/main_SfMInit_ImageListing.cpp.o
+
+.PHONY : sfm/main_SfMInit_ImageListing.o
+
+# target to build an object file
+sfm/main_SfMInit_ImageListing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o
+.PHONY : sfm/main_SfMInit_ImageListing.cpp.o
+
+sfm/main_SfMInit_ImageListing.i: sfm/main_SfMInit_ImageListing.cpp.i
+
+.PHONY : sfm/main_SfMInit_ImageListing.i
+
+# target to preprocess a source file
+sfm/main_SfMInit_ImageListing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.i
+.PHONY : sfm/main_SfMInit_ImageListing.cpp.i
+
+sfm/main_SfMInit_ImageListing.s: sfm/main_SfMInit_ImageListing.cpp.s
+
+.PHONY : sfm/main_SfMInit_ImageListing.s
+
+# target to generate assembly for a file
+sfm/main_SfMInit_ImageListing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.s
+.PHONY : sfm/main_SfMInit_ImageListing.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -182,6 +209,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sfm/main_SfMInit_ImageListing.o"
+	@echo "... sfm/main_SfMInit_ImageListing.i"
+	@echo "... sfm/main_SfMInit_ImageListing.s"
 .PHONY : help
 
 

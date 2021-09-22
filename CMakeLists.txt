@@ -3,7 +3,8 @@ project(openMVGLite)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(openMVGLite main.cpp)
+add_executable(openMVGLite sfm/main_SfMInit_ImageListing.cpp sfm/main_ComputeFeatures.cpp)
+#add_executable(main_feature sfm/main_SfMInit_ImageListing.cpp sfm/main_ComputeFeatures.cpp)
 
 find_package(OpenCV REQUIRED)
 find_package(OpenMVG REQUIRED)
