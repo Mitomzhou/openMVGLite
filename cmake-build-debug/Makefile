@@ -59,38 +59,27 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2020.3.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /opt/clion-2020.3.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2020.3.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /opt/clion-2020.3.2/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite
+CMAKE_SOURCE_DIR = /home/mitom/3DReconstruction/git/openMVGLite
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug
+CMAKE_BINARY_DIR = /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2020.3.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2020.3.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2020.3.2/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -98,11 +87,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/opt/clion-2020.3.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,44 +131,57 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named openMVGLite
+# Target rules for targets named main_ComputeFeatures
 
 # Build rule for target.
-openMVGLite: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 openMVGLite
-.PHONY : openMVGLite
+main_ComputeFeatures: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_ComputeFeatures
+.PHONY : main_ComputeFeatures
 
 # fast build rule for target.
-openMVGLite/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/build
-.PHONY : openMVGLite/fast
+main_ComputeFeatures/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/build
+.PHONY : main_ComputeFeatures/fast
 
-main.o: main.cpp.o
+#=============================================================================
+# Target rules for targets named main_SfMInit_ImageListing
 
-.PHONY : main.o
+# Build rule for target.
+main_SfMInit_ImageListing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_SfMInit_ImageListing
+.PHONY : main_SfMInit_ImageListing
+
+# fast build rule for target.
+main_SfMInit_ImageListing/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/build
+.PHONY : main_SfMInit_ImageListing/fast
+
+sfm/main_ComputeFeatures.o: sfm/main_ComputeFeatures.cpp.o
+
+.PHONY : sfm/main_ComputeFeatures.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/main.cpp.o
-.PHONY : main.cpp.o
+sfm/main_ComputeFeatures.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/sfm/main_ComputeFeatures.cpp.o
+.PHONY : sfm/main_ComputeFeatures.cpp.o
 
-main.i: main.cpp.i
+sfm/main_ComputeFeatures.i: sfm/main_ComputeFeatures.cpp.i
 
-.PHONY : main.i
+.PHONY : sfm/main_ComputeFeatures.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/main.cpp.i
-.PHONY : main.cpp.i
+sfm/main_ComputeFeatures.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/sfm/main_ComputeFeatures.cpp.i
+.PHONY : sfm/main_ComputeFeatures.cpp.i
 
-main.s: main.cpp.s
+sfm/main_ComputeFeatures.s: sfm/main_ComputeFeatures.cpp.s
 
-.PHONY : main.s
+.PHONY : sfm/main_ComputeFeatures.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/main.cpp.s
-.PHONY : main.cpp.s
+sfm/main_ComputeFeatures.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/sfm/main_ComputeFeatures.cpp.s
+.PHONY : sfm/main_ComputeFeatures.cpp.s
 
 sfm/main_SfMInit_ImageListing.o: sfm/main_SfMInit_ImageListing.cpp.o
 
@@ -176,7 +189,7 @@ sfm/main_SfMInit_ImageListing.o: sfm/main_SfMInit_ImageListing.cpp.o
 
 # target to build an object file
 sfm/main_SfMInit_ImageListing.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/sfm/main_SfMInit_ImageListing.cpp.o
 .PHONY : sfm/main_SfMInit_ImageListing.cpp.o
 
 sfm/main_SfMInit_ImageListing.i: sfm/main_SfMInit_ImageListing.cpp.i
@@ -185,7 +198,7 @@ sfm/main_SfMInit_ImageListing.i: sfm/main_SfMInit_ImageListing.cpp.i
 
 # target to preprocess a source file
 sfm/main_SfMInit_ImageListing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/sfm/main_SfMInit_ImageListing.cpp.i
 .PHONY : sfm/main_SfMInit_ImageListing.cpp.i
 
 sfm/main_SfMInit_ImageListing.s: sfm/main_SfMInit_ImageListing.cpp.s
@@ -194,7 +207,7 @@ sfm/main_SfMInit_ImageListing.s: sfm/main_SfMInit_ImageListing.cpp.s
 
 # target to generate assembly for a file
 sfm/main_SfMInit_ImageListing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/sfm/main_SfMInit_ImageListing.cpp.s
 .PHONY : sfm/main_SfMInit_ImageListing.cpp.s
 
 # Help Target
@@ -205,10 +218,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... openMVGLite"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... main_ComputeFeatures"
+	@echo "... main_SfMInit_ImageListing"
+	@echo "... sfm/main_ComputeFeatures.o"
+	@echo "... sfm/main_ComputeFeatures.i"
+	@echo "... sfm/main_ComputeFeatures.s"
 	@echo "... sfm/main_SfMInit_ImageListing.o"
 	@echo "... sfm/main_SfMInit_ImageListing.i"
 	@echo "... sfm/main_SfMInit_ImageListing.s"

@@ -1,3 +1,4 @@
-/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/openMVGLite.dir
+/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles/main_ComputeFeatures.dir
+/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles/main_SfMInit_ImageListing.dir

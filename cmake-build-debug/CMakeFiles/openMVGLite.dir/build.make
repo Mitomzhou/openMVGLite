@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2020.3.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /opt/clion-2020.3.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2020.3.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /opt/clion-2020.3.2/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite
+CMAKE_SOURCE_DIR = /home/mitom/3DReconstruction/git/openMVGLite
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug
+CMAKE_BINARY_DIR = /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/openMVGLite.dir/depend.make
@@ -77,42 +77,42 @@ include CMakeFiles/openMVGLite.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/openMVGLite.dir/flags.make
 
-CMakeFiles/openMVGLite.dir/main.cpp.o: CMakeFiles/openMVGLite.dir/flags.make
-CMakeFiles/openMVGLite.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/openMVGLite.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/openMVGLite.dir/main.cpp.o -c /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/main.cpp
-
-CMakeFiles/openMVGLite.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openMVGLite.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/main.cpp > CMakeFiles/openMVGLite.dir/main.cpp.i
-
-CMakeFiles/openMVGLite.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openMVGLite.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/main.cpp -o CMakeFiles/openMVGLite.dir/main.cpp.s
-
 CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o: CMakeFiles/openMVGLite.dir/flags.make
 CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o: ../sfm/main_SfMInit_ImageListing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o -c /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o -c /home/mitom/3DReconstruction/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp
 
 CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp > CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mitom/3DReconstruction/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp > CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.i
 
 CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp -o CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mitom/3DReconstruction/git/openMVGLite/sfm/main_SfMInit_ImageListing.cpp -o CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.s
+
+CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.o: CMakeFiles/openMVGLite.dir/flags.make
+CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.o: ../sfm/main_ComputeFeatures.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.o -c /home/mitom/3DReconstruction/git/openMVGLite/sfm/main_ComputeFeatures.cpp
+
+CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mitom/3DReconstruction/git/openMVGLite/sfm/main_ComputeFeatures.cpp > CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.i
+
+CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mitom/3DReconstruction/git/openMVGLite/sfm/main_ComputeFeatures.cpp -o CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.s
 
 # Object files for target openMVGLite
 openMVGLite_OBJECTS = \
-"CMakeFiles/openMVGLite.dir/main.cpp.o" \
-"CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o"
+"CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o" \
+"CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.o"
 
 # External object files for target openMVGLite
 openMVGLite_EXTERNAL_OBJECTS =
 
-openMVGLite: CMakeFiles/openMVGLite.dir/main.cpp.o
 openMVGLite: CMakeFiles/openMVGLite.dir/sfm/main_SfMInit_ImageListing.cpp.o
+openMVGLite: CMakeFiles/openMVGLite.dir/sfm/main_ComputeFeatures.cpp.o
 openMVGLite: CMakeFiles/openMVGLite.dir/build.make
 openMVGLite: /usr/local/lib/libopenMVG_sfm.a
 openMVGLite: /usr/local/lib/libopenMVG_matching.a
@@ -128,14 +128,15 @@ openMVGLite: /usr/local/lib/libopenMVG_numeric.a
 openMVGLite: /usr/local/lib/libopenMVG_robust_estimation.a
 openMVGLite: /usr/local/lib/libopenMVG_sfm.a
 openMVGLite: /usr/local/lib/libopenMVG_system.a
-openMVGLite: /usr/local/lib/libopencv_gapi.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_highgui.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_ml.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_objdetect.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_photo.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_stitching.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_video.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_videoio.so.4.5.3
+openMVGLite: /usr/local/lib/libopencv_dnn.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_gapi.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_highgui.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_ml.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_objdetect.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_photo.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_stitching.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_video.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_videoio.so.4.3.0
 openMVGLite: /usr/local/lib/libopenMVG_geometry.a
 openMVGLite: /usr/local/lib/libopenMVG_image.a
 openMVGLite: /usr/lib/x86_64-linux-gnu/libjpeg.so
@@ -158,20 +159,16 @@ openMVGLite: /usr/local/lib/libopenMVG_lemon.a
 openMVGLite: /usr/local/lib/libopenMVG_ceres.a
 openMVGLite: /usr/local/lib/libopenMVG_cxsparse.a
 openMVGLite: /usr/lib/x86_64-linux-gnu/liblapack.so
-openMVGLite: /usr/lib/x86_64-linux-gnu/libf77blas.so
-openMVGLite: /usr/lib/x86_64-linux-gnu/libatlas.so
-openMVGLite: /usr/lib/x86_64-linux-gnu/libf77blas.so
-openMVGLite: /usr/lib/x86_64-linux-gnu/libatlas.so
+openMVGLite: /usr/lib/x86_64-linux-gnu/libblas.so
 openMVGLite: /usr/local/lib/libopenMVG_numeric.a
-openMVGLite: /usr/local/lib/libopencv_dnn.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_imgcodecs.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_calib3d.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_features2d.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_flann.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_imgproc.so.4.5.3
-openMVGLite: /usr/local/lib/libopencv_core.so.4.5.3
+openMVGLite: /usr/local/lib/libopencv_imgcodecs.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_calib3d.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_features2d.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_flann.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_imgproc.so.4.3.0
+openMVGLite: /usr/local/lib/libopencv_core.so.4.3.0
 openMVGLite: CMakeFiles/openMVGLite.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable openMVGLite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable openMVGLite"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/openMVGLite.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -184,6 +181,6 @@ CMakeFiles/openMVGLite.dir/clean:
 .PHONY : CMakeFiles/openMVGLite.dir/clean
 
 CMakeFiles/openMVGLite.dir/depend:
-	cd /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles/openMVGLite.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mitom/3DReconstruction/git/openMVGLite /home/mitom/3DReconstruction/git/openMVGLite /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles/openMVGLite.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/openMVGLite.dir/depend
 

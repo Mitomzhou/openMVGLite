@@ -1,4 +1,4 @@
-# Install script for directory: /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite
+# Install script for directory: /home/mitom/3DReconstruction/git/openMVGLite
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

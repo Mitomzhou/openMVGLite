@@ -55,25 +55,26 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2020.3.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /opt/clion-2020.3.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2020.3.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /opt/clion-2020.3.2/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite
+CMAKE_SOURCE_DIR = /home/mitom/3DReconstruction/git/openMVGLite
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug
+CMAKE_BINARY_DIR = /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/openMVGLite.dir/all
+all: CMakeFiles/main_ComputeFeatures.dir/all
+all: CMakeFiles/main_SfMInit_ImageListing.dir/all
 
 .PHONY : all
 
@@ -83,36 +84,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/openMVGLite.dir/clean
+clean: CMakeFiles/main_ComputeFeatures.dir/clean
+clean: CMakeFiles/main_SfMInit_ImageListing.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/openMVGLite.dir
+# Target rules for target CMakeFiles/main_ComputeFeatures.dir
 
 # All Build rule for target.
-CMakeFiles/openMVGLite.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target openMVGLite"
-.PHONY : CMakeFiles/openMVGLite.dir/all
+CMakeFiles/main_ComputeFeatures.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target main_ComputeFeatures"
+.PHONY : CMakeFiles/main_ComputeFeatures.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/openMVGLite.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/openMVGLite.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/MVG_MVS/git/openMVGLite/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/openMVGLite.dir/rule
+CMakeFiles/main_ComputeFeatures.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main_ComputeFeatures.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main_ComputeFeatures.dir/rule
 
 # Convenience name for target.
-openMVGLite: CMakeFiles/openMVGLite.dir/rule
+main_ComputeFeatures: CMakeFiles/main_ComputeFeatures.dir/rule
 
-.PHONY : openMVGLite
+.PHONY : main_ComputeFeatures
 
 # clean rule for target.
-CMakeFiles/openMVGLite.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/openMVGLite.dir/build.make CMakeFiles/openMVGLite.dir/clean
-.PHONY : CMakeFiles/openMVGLite.dir/clean
+CMakeFiles/main_ComputeFeatures.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/clean
+.PHONY : CMakeFiles/main_ComputeFeatures.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main_SfMInit_ImageListing.dir
+
+# All Build rule for target.
+CMakeFiles/main_SfMInit_ImageListing.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target main_SfMInit_ImageListing"
+.PHONY : CMakeFiles/main_SfMInit_ImageListing.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main_SfMInit_ImageListing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main_SfMInit_ImageListing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main_SfMInit_ImageListing.dir/rule
+
+# Convenience name for target.
+main_SfMInit_ImageListing: CMakeFiles/main_SfMInit_ImageListing.dir/rule
+
+.PHONY : main_SfMInit_ImageListing
+
+# clean rule for target.
+CMakeFiles/main_SfMInit_ImageListing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/clean
+.PHONY : CMakeFiles/main_SfMInit_ImageListing.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
