@@ -1,9 +1,11 @@
 #include <cereal/archives/json.hpp>
+#include <cereal/details/helpers.hpp>
 
 #include "openMVG/features/akaze/image_describer_akaze_io.hpp"
 
 #include "openMVG/features/sift/SIFT_Anatomy_Image_Describer_io.hpp"
 #include "openMVG/image/image_io.hpp"
+#include "openMVG/features/regions_factory_io.hpp"
 #include "openMVG/sfm/sfm_data.hpp"
 #include "openMVG/sfm/sfm_data_io.hpp"
 #include "openMVG/system/timer.hpp"
@@ -11,18 +13,13 @@
 #include "third_party/progress/progress_display.hpp"
 #include "third_party/stlplus3/filesystemSimplified/file_system.hpp"
 
-//#include "nonFree/sift/SIFT_describer_io.hpp"
-
-#include <cereal/details/helpers.hpp>
-#include <cereal/types/polymorphic.hpp>
-#include <cereal/archives/portable_binary.hpp>
-
 #include <atomic>
 #include <cstdlib>
 #include <fstream>
 #include <string>
 
 #ifdef OPENMVG_USE_OPENMP
+#include <omp.h>
 #endif
 
 using namespace openMVG;
@@ -47,8 +44,8 @@ features::EDESCRIBER_PRESET stringToEnum(const std::string & sPreset)
     return preset;
 }
 
-int main()
-{
+
+int main() {
     // main_SfMInit_ImageListing生成的json文件的路径
     std::string sSfM_Data_Filename = "../dataoutput/sfm_data.json";
     // 特征文件和秒睡文件输出到matches文件夹
@@ -63,17 +60,17 @@ int main()
     std::string sFeaturePreset = "";
 
 #ifdef OPENMVG_USE_OPENMP
-    // 多线程数
-    int iNumThreads = 0;
+    int iNumThreads = 6;
 #endif
 
+
     // 校验输入输出
-    if (sOutDir.empty())  {
+    if (sOutDir.empty()) {
         std::cerr << "\nIt is an invalid output directory" << std::endl;
         return EXIT_FAILURE;
     }
-    if (!stlplus::folder_exists(sOutDir)){
-        if (!stlplus::folder_create(sOutDir)){
+    if (!stlplus::folder_exists(sOutDir)) {
+        if (!stlplus::folder_create(sOutDir)) {
             std::cerr << "Cannot create output directory" << std::endl;
             return EXIT_FAILURE;
         }
@@ -81,8 +78,8 @@ int main()
 
     // 加载输入视图
     SfM_Data sfm_data;
-    if (!Load(sfm_data, sSfM_Data_Filename, ESfM_Data(VIEWS|INTRINSICS))) {
-        std::cerr << std::endl << "The input file \""<< sSfM_Data_Filename << "\" cannot be read" << std::endl;
+    if (!Load(sfm_data, sSfM_Data_Filename, ESfM_Data(VIEWS | INTRINSICS))) {
+        std::cerr << std::endl << "The input file \"" << sSfM_Data_Filename << "\" cannot be read" << std::endl;
         return EXIT_FAILURE;
     }
 
@@ -92,23 +89,25 @@ int main()
     const std::string sImage_describer = stlplus::create_filespec(sOutDir, "image_describer", "json");
 
     // 特征描述子方法
-    if (sImage_Describer_Method == "SIFT"){
+    if (sImage_Describer_Method == "SIFT") {
         // image_describer.reset(new SIFT_Image_describer(SIFT_Image_describer::Params(), !bUpRight));
-    }else if (sImage_Describer_Method == "SIFT_ANATOMY"){
+    } else if (sImage_Describer_Method == "SIFT_ANATOMY") {
         image_describer.reset(new SIFT_Anatomy_Image_describer(SIFT_Anatomy_Image_describer::Params()));
-    } else if (sImage_Describer_Method == "AKAZE_FLOAT"){
-        image_describer = AKAZE_Image_describer::create(AKAZE_Image_describer::Params(AKAZE::Params(), AKAZE_MSURF), !bUpRight);
-    }else if (sImage_Describer_Method == "AKAZE_MLDB"){
-        image_describer = AKAZE_Image_describer::create(AKAZE_Image_describer::Params(AKAZE::Params(), AKAZE_MLDB), !bUpRight);
+    } else if (sImage_Describer_Method == "AKAZE_FLOAT") {
+        image_describer = AKAZE_Image_describer::create(AKAZE_Image_describer::Params(AKAZE::Params(), AKAZE_MSURF),
+                                                        !bUpRight);
+    } else if (sImage_Describer_Method == "AKAZE_MLDB") {
+        image_describer = AKAZE_Image_describer::create(AKAZE_Image_describer::Params(AKAZE::Params(), AKAZE_MLDB),
+                                                        !bUpRight);
     }
 
-    if (!image_describer){
+    if (!image_describer) {
         std::cerr << "Cannot create the designed Image_describer:"
                   << sImage_Describer_Method << "." << std::endl;
         return EXIT_FAILURE;
-    }else{
-        if (!sFeaturePreset.empty()){
-            if (!image_describer->Set_configuration_preset(stringToEnum(sFeaturePreset))){
+    } else {
+        if (!sFeaturePreset.empty()) {
+            if (!image_describer->Set_configuration_preset(stringToEnum(sFeaturePreset))) {
                 std::cerr << "Preset configuration failed." << std::endl;
                 return EXIT_FAILURE;
             }
@@ -118,7 +117,7 @@ int main()
     //导出用于：动态未来区域计算和/或加载的所用图像描述符和区域类型
     {
         std::ofstream stream(sImage_describer.c_str());
-        if (!stream.is_open()){
+        if (!stream.is_open()) {
             return EXIT_FAILURE;
         }
         cereal::JSONOutputArchive archive(stream);
@@ -146,10 +145,10 @@ int main()
 #pragma omp parallel for schedule(dynamic) if (iNumThreads > 0) private(imageGray)
 #endif
         // 开始计算特征
-        for (int i = 0; i < static_cast<int>(sfm_data.views.size()); ++i){
+        for (int i = 0; i < static_cast<int>(sfm_data.views.size()); ++i) {
             Views::const_iterator iterViews = sfm_data.views.begin();
             std::advance(iterViews, i);
-            const View * view = iterViews->second.get();
+            const View *view = iterViews->second.get();
 
             // 创建两个文件 .feat .desc
             const std::string sView_filename = stlplus::create_filespec(sfm_data.s_root_path, view->s_Img_path);
@@ -157,37 +156,38 @@ int main()
             const std::string sDesc = stlplus::create_filespec(sOutDir, stlplus::basename_part(sView_filename), "desc");
 
             // 不存在就计算
-            if (!preemptive_exit && (bForce || !stlplus::file_exists(sFeat) || !stlplus::file_exists(sDesc)))
-            {
-                if (!ReadImage(sView_filename.c_str(), &imageGray)){
+            if (!preemptive_exit && (bForce || !stlplus::file_exists(sFeat) || !stlplus::file_exists(sDesc))) {
+                if (!ReadImage(sView_filename.c_str(), &imageGray)) {
                     continue;
                 }
 
                 // 查看是否有遮挡特征mask，默认是没有mask
-                Image<unsigned char> * mask = nullptr;
+                Image<unsigned char> *mask = nullptr;
 
-                const std::string mask_filename_local = stlplus::create_filespec(sfm_data.s_root_path, stlplus::basename_part(sView_filename) + "_mask", "png");
+                const std::string mask_filename_local = stlplus::create_filespec(sfm_data.s_root_path,
+                                                                                 stlplus::basename_part(
+                                                                                         sView_filename) + "_mask",
+                                                                                 "png");
                 const std::string mask__filename_global = stlplus::create_filespec(sfm_data.s_root_path, "mask", "png");
 
                 Image<unsigned char> imageMask;
 
                 // 局部mask
-                if (stlplus::file_exists(mask_filename_local)){
-                    if (!ReadImage(mask_filename_local.c_str(), &imageMask)){
+                if (stlplus::file_exists(mask_filename_local)) {
+                    if (!ReadImage(mask_filename_local.c_str(), &imageMask)) {
                         std::cerr << "Invalid mask: " << mask_filename_local << std::endl
                                   << "Stopping feature extraction." << std::endl;
                         preemptive_exit = true;
                         continue;
                     }
                     // 仅当局部mask符合当前图像大小时使用
-                    if (imageMask.Width() == imageGray.Width() && imageMask.Height() == imageGray.Height()){
+                    if (imageMask.Width() == imageGray.Width() && imageMask.Height() == imageGray.Height()) {
                         mask = &imageMask;
                     }
                     // 全局mask
-                }else{
-                    if (stlplus::file_exists(mask__filename_global)){
-                        if (!ReadImage(mask__filename_global.c_str(), &imageMask))
-                        {
+                } else {
+                    if (stlplus::file_exists(mask__filename_global)) {
+                        if (!ReadImage(mask__filename_global.c_str(), &imageMask)) {
                             std::cerr << "Invalid mask: " << mask__filename_global << std::endl
                                       << "Stopping feature extraction." << std::endl;
                             preemptive_exit = true;
@@ -208,7 +208,7 @@ int main()
                     continue;
                 }
             }
-            ++ my_progress_bar;
+            ++my_progress_bar;
         }
         std::cout << "Task done in (s): " << timer.elapsed() << std::endl;
     }
