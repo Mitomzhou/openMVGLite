@@ -14,6 +14,8 @@
 //#include "nonFree/sift/SIFT_describer_io.hpp"
 
 #include <cereal/details/helpers.hpp>
+#include <cereal/types/polymorphic.hpp>
+#include <cereal/archives/portable_binary.hpp>
 
 #include <atomic>
 #include <cstdlib>
@@ -210,5 +212,5 @@ int main()
         }
         std::cout << "Task done in (s): " << timer.elapsed() << std::endl;
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
