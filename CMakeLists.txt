@@ -47,3 +47,9 @@ target_link_libraries(main_ComputeMatches
         OpenMVG::openMVG_robust_estimation
         OpenMVG::openMVG_matching_image_collection
 )
+
+add_executable(main_GlobalSfM sfm/main_GlobalSfM.cpp)
+target_link_libraries(main_GlobalSfM
+        PRIVATE
+        OpenMVG::openMVG_sfm
+        )

@@ -157,6 +157,19 @@ main_ComputeFeatures/fast:
 .PHONY : main_ComputeFeatures/fast
 
 #=============================================================================
+# Target rules for targets named main_GlobalSfM
+
+# Build rule for target.
+main_GlobalSfM: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_GlobalSfM
+.PHONY : main_GlobalSfM
+
+# fast build rule for target.
+main_GlobalSfM/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_GlobalSfM.dir/build.make CMakeFiles/main_GlobalSfM.dir/build
+.PHONY : main_GlobalSfM/fast
+
+#=============================================================================
 # Target rules for targets named main_ComputeMatches
 
 # Build rule for target.
@@ -223,6 +236,33 @@ sfm/main_ComputeMatches.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeMatches.dir/build.make CMakeFiles/main_ComputeMatches.dir/sfm/main_ComputeMatches.cpp.s
 .PHONY : sfm/main_ComputeMatches.cpp.s
 
+sfm/main_GlobalSfM.o: sfm/main_GlobalSfM.cpp.o
+
+.PHONY : sfm/main_GlobalSfM.o
+
+# target to build an object file
+sfm/main_GlobalSfM.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_GlobalSfM.dir/build.make CMakeFiles/main_GlobalSfM.dir/sfm/main_GlobalSfM.cpp.o
+.PHONY : sfm/main_GlobalSfM.cpp.o
+
+sfm/main_GlobalSfM.i: sfm/main_GlobalSfM.cpp.i
+
+.PHONY : sfm/main_GlobalSfM.i
+
+# target to preprocess a source file
+sfm/main_GlobalSfM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_GlobalSfM.dir/build.make CMakeFiles/main_GlobalSfM.dir/sfm/main_GlobalSfM.cpp.i
+.PHONY : sfm/main_GlobalSfM.cpp.i
+
+sfm/main_GlobalSfM.s: sfm/main_GlobalSfM.cpp.s
+
+.PHONY : sfm/main_GlobalSfM.s
+
+# target to generate assembly for a file
+sfm/main_GlobalSfM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_GlobalSfM.dir/build.make CMakeFiles/main_GlobalSfM.dir/sfm/main_GlobalSfM.cpp.s
+.PHONY : sfm/main_GlobalSfM.cpp.s
+
 sfm/main_SfMInit_ImageListing.o: sfm/main_SfMInit_ImageListing.cpp.o
 
 .PHONY : sfm/main_SfMInit_ImageListing.o
@@ -260,6 +300,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... main_ComputeFeatures"
 	@echo "... main_ComputeMatches"
+	@echo "... main_GlobalSfM"
 	@echo "... main_SfMInit_ImageListing"
 	@echo "... sfm/main_ComputeFeatures.o"
 	@echo "... sfm/main_ComputeFeatures.i"
@@ -267,6 +308,9 @@ help:
 	@echo "... sfm/main_ComputeMatches.o"
 	@echo "... sfm/main_ComputeMatches.i"
 	@echo "... sfm/main_ComputeMatches.s"
+	@echo "... sfm/main_GlobalSfM.o"
+	@echo "... sfm/main_GlobalSfM.i"
+	@echo "... sfm/main_GlobalSfM.s"
 	@echo "... sfm/main_SfMInit_ImageListing.o"
 	@echo "... sfm/main_SfMInit_ImageListing.i"
 	@echo "... sfm/main_SfMInit_ImageListing.s"

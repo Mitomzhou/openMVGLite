@@ -75,6 +75,7 @@ CMAKE_BINARY_DIR = /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debu
 # The main recursive "all" target.
 all: CMakeFiles/main_SfMInit_ImageListing.dir/all
 all: CMakeFiles/main_ComputeFeatures.dir/all
+all: CMakeFiles/main_GlobalSfM.dir/all
 all: CMakeFiles/main_ComputeMatches.dir/all
 
 .PHONY : all
@@ -87,6 +88,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/main_SfMInit_ImageListing.dir/clean
 clean: CMakeFiles/main_ComputeFeatures.dir/clean
+clean: CMakeFiles/main_GlobalSfM.dir/clean
 clean: CMakeFiles/main_ComputeMatches.dir/clean
 
 .PHONY : clean
@@ -98,7 +100,7 @@ clean: CMakeFiles/main_ComputeMatches.dir/clean
 CMakeFiles/main_SfMInit_ImageListing.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target main_SfMInit_ImageListing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target main_SfMInit_ImageListing"
 .PHONY : CMakeFiles/main_SfMInit_ImageListing.dir/all
 
 # Build rule for subdir invocation for target.
@@ -144,6 +146,33 @@ main_ComputeFeatures: CMakeFiles/main_ComputeFeatures.dir/rule
 CMakeFiles/main_ComputeFeatures.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/clean
 .PHONY : CMakeFiles/main_ComputeFeatures.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main_GlobalSfM.dir
+
+# All Build rule for target.
+CMakeFiles/main_GlobalSfM.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_GlobalSfM.dir/build.make CMakeFiles/main_GlobalSfM.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_GlobalSfM.dir/build.make CMakeFiles/main_GlobalSfM.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target main_GlobalSfM"
+.PHONY : CMakeFiles/main_GlobalSfM.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main_GlobalSfM.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main_GlobalSfM.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main_GlobalSfM.dir/rule
+
+# Convenience name for target.
+main_GlobalSfM: CMakeFiles/main_GlobalSfM.dir/rule
+
+.PHONY : main_GlobalSfM
+
+# clean rule for target.
+CMakeFiles/main_GlobalSfM.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_GlobalSfM.dir/build.make CMakeFiles/main_GlobalSfM.dir/clean
+.PHONY : CMakeFiles/main_GlobalSfM.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/main_ComputeMatches.dir

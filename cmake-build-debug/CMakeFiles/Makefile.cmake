@@ -73,5 +73,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main_SfMInit_ImageListing.dir/DependInfo.cmake"
   "CMakeFiles/main_ComputeFeatures.dir/DependInfo.cmake"
+  "CMakeFiles/main_GlobalSfM.dir/DependInfo.cmake"
   "CMakeFiles/main_ComputeMatches.dir/DependInfo.cmake"
   )

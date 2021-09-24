@@ -10,11 +10,5 @@
 -- Found Ceres version: 2.0.0 installed in: /usr/local with components: [EigenSparse, SparseLinearAlgebraLibrary, LAPACK, SuiteSparse, CXSparse, SchurSpecializations, Multithreading]
 OPENMP FOUND
 -- Configuring done
-CMake Error at CMakeLists.txt:42 (add_executable):
-  Target "main_ComputeMatches" links to target "OpenMVG::openMVG_robust" but
-  the target was not found.  Perhaps a find_package() call is missing for an
-  IMPORTED target, or an ALIAS target is missing?
-
-
 -- Generating done
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Build files have been written to: /home/mitom/3DReconstruction/git/openMVGLite/cmake-build-debug
