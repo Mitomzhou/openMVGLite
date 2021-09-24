@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named main_SfMInit_ImageListing
+
+# Build rule for target.
+main_SfMInit_ImageListing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_SfMInit_ImageListing
+.PHONY : main_SfMInit_ImageListing
+
+# fast build rule for target.
+main_SfMInit_ImageListing/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/build
+.PHONY : main_SfMInit_ImageListing/fast
+
+#=============================================================================
 # Target rules for targets named main_ComputeFeatures
 
 # Build rule for target.
@@ -144,17 +157,17 @@ main_ComputeFeatures/fast:
 .PHONY : main_ComputeFeatures/fast
 
 #=============================================================================
-# Target rules for targets named main_SfMInit_ImageListing
+# Target rules for targets named main_ComputeMatches
 
 # Build rule for target.
-main_SfMInit_ImageListing: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_SfMInit_ImageListing
-.PHONY : main_SfMInit_ImageListing
+main_ComputeMatches: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_ComputeMatches
+.PHONY : main_ComputeMatches
 
 # fast build rule for target.
-main_SfMInit_ImageListing/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_SfMInit_ImageListing.dir/build.make CMakeFiles/main_SfMInit_ImageListing.dir/build
-.PHONY : main_SfMInit_ImageListing/fast
+main_ComputeMatches/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeMatches.dir/build.make CMakeFiles/main_ComputeMatches.dir/build
+.PHONY : main_ComputeMatches/fast
 
 sfm/main_ComputeFeatures.o: sfm/main_ComputeFeatures.cpp.o
 
@@ -182,6 +195,33 @@ sfm/main_ComputeFeatures.s: sfm/main_ComputeFeatures.cpp.s
 sfm/main_ComputeFeatures.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeFeatures.dir/build.make CMakeFiles/main_ComputeFeatures.dir/sfm/main_ComputeFeatures.cpp.s
 .PHONY : sfm/main_ComputeFeatures.cpp.s
+
+sfm/main_ComputeMatches.o: sfm/main_ComputeMatches.cpp.o
+
+.PHONY : sfm/main_ComputeMatches.o
+
+# target to build an object file
+sfm/main_ComputeMatches.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeMatches.dir/build.make CMakeFiles/main_ComputeMatches.dir/sfm/main_ComputeMatches.cpp.o
+.PHONY : sfm/main_ComputeMatches.cpp.o
+
+sfm/main_ComputeMatches.i: sfm/main_ComputeMatches.cpp.i
+
+.PHONY : sfm/main_ComputeMatches.i
+
+# target to preprocess a source file
+sfm/main_ComputeMatches.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeMatches.dir/build.make CMakeFiles/main_ComputeMatches.dir/sfm/main_ComputeMatches.cpp.i
+.PHONY : sfm/main_ComputeMatches.cpp.i
+
+sfm/main_ComputeMatches.s: sfm/main_ComputeMatches.cpp.s
+
+.PHONY : sfm/main_ComputeMatches.s
+
+# target to generate assembly for a file
+sfm/main_ComputeMatches.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_ComputeMatches.dir/build.make CMakeFiles/main_ComputeMatches.dir/sfm/main_ComputeMatches.cpp.s
+.PHONY : sfm/main_ComputeMatches.cpp.s
 
 sfm/main_SfMInit_ImageListing.o: sfm/main_SfMInit_ImageListing.cpp.o
 
@@ -219,10 +259,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main_ComputeFeatures"
+	@echo "... main_ComputeMatches"
 	@echo "... main_SfMInit_ImageListing"
 	@echo "... sfm/main_ComputeFeatures.o"
 	@echo "... sfm/main_ComputeFeatures.i"
 	@echo "... sfm/main_ComputeFeatures.s"
+	@echo "... sfm/main_ComputeMatches.o"
+	@echo "... sfm/main_ComputeMatches.i"
+	@echo "... sfm/main_ComputeMatches.s"
 	@echo "... sfm/main_SfMInit_ImageListing.o"
 	@echo "... sfm/main_SfMInit_ImageListing.i"
 	@echo "... sfm/main_SfMInit_ImageListing.s"

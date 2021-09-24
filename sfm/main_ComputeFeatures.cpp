@@ -18,9 +18,7 @@
 #include <fstream>
 #include <string>
 
-#ifdef OPENMVG_USE_OPENMP
 #include <omp.h>
-#endif
 
 using namespace openMVG;
 using namespace openMVG::image;
@@ -48,7 +46,7 @@ features::EDESCRIBER_PRESET stringToEnum(const std::string & sPreset)
 int main() {
     // main_SfMInit_ImageListing生成的json文件的路径
     std::string sSfM_Data_Filename = "../dataoutput/sfm_data.json";
-    // 特征文件和秒睡文件输出到matches文件夹
+    // 特征文件和描述子文件输出到matches文件夹
     std::string sOutDir = "../dataoutput/matches";
     // AKAZE描述子使用，是否计算方向
     bool bUpRight = false;
@@ -58,11 +56,8 @@ int main() {
     bool bForce = true;
     // 描述子质量:normal high ultra
     std::string sFeaturePreset = "";
-
-#ifdef OPENMVG_USE_OPENMP
-    int iNumThreads = 6;
-#endif
-
+    // 设置并行线程数
+    int iNumThreads = 2;
 
     // 校验输入输出
     if (sOutDir.empty()) {
@@ -135,15 +130,14 @@ int main() {
         // Use a boolean to track if we must stop feature extraction
         std::atomic<bool> preemptive_exit(false);
 
-#ifdef OPENMVG_USE_OPENMP
-        const unsigned int nb_max_thread = omp_get_max_threads();
-        if (iNumThreads > 0) {
-            omp_set_num_threads(iNumThreads);
-        } else {
-            omp_set_num_threads(nb_max_thread);
-        }
+// 多线程
+const unsigned int nb_max_thread = omp_get_max_threads();
+if (iNumThreads > 0) {
+    omp_set_num_threads(iNumThreads);
+} else {
+    omp_set_num_threads(nb_max_thread);
+}
 #pragma omp parallel for schedule(dynamic) if (iNumThreads > 0) private(imageGray)
-#endif
         // 开始计算特征
         for (int i = 0; i < static_cast<int>(sfm_data.views.size()); ++i) {
             Views::const_iterator iterViews = sfm_data.views.begin();

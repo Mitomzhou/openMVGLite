@@ -39,3 +39,11 @@ target_link_libraries(main_ComputeFeatures
         ${OpenCV_LIBS}
         )
 
+add_executable(main_ComputeMatches sfm/main_ComputeMatches.cpp)
+target_link_libraries(main_ComputeMatches
+        PRIVATE
+        OpenMVG::openMVG_sfm
+        OpenMVG::openMVG_matching
+        OpenMVG::openMVG_robust_estimation
+        OpenMVG::openMVG_matching_image_collection
+)

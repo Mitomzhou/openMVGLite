@@ -250,6 +250,9 @@ OpenMP_pthread_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 //The directory containing a CMake configuration file for OpenMVG.
 OpenMVG_DIR:PATH=/usr/local/share/openMVG/cmake
 
+//Enable OpenMP parallelization
+OpenMVG_USE_OPENMP:BOOL=ON
+
 //Path to a program.
 ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 
