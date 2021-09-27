@@ -109,11 +109,9 @@ bool exportToOpenMVS(const SfM_Data & sfm_data,const std::string & sOutFile,cons
     // 导出无畸变图像
     C_Progress_display my_progress_bar_images(sfm_data.views.size(),std::cout, "\n- UNDISTORT IMAGES -\n" );
     std::atomic<bool> bOk(true); // Use a boolean to track the status of the loop process
-#ifdef OPENMVG_USE_OPENMP
     const unsigned int nb_max_thread = (iNumThreads > 0)? iNumThreads : omp_get_max_threads();
 
-  #pragma omp parallel for schedule(dynamic) num_threads(nb_max_thread)
-#endif
+#pragma omp parallel for schedule(dynamic) num_threads(nb_max_thread)
     for (int i = 0; i < static_cast<int>(sfm_data.views.size()); ++i) {
         ++my_progress_bar_images;
 
@@ -207,10 +205,11 @@ bool exportToOpenMVS(const SfM_Data & sfm_data,const std::string & sOutFile,cons
 int main()
 {
     // MVG产生的sfm_data.bin文件
-    std::string sSfM_Data_Filename = "../dataoutput/sfm_out/sfm_data.bin";
+    std::string sSfM_Data_Filename = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/sfm_data.bin";
     // 输出文件
-    std::string sOutFile = "scene.mvs";
-    std::string sOutDir = "../dataoutput/undistorted_images/";
+    std::string sOutFile = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/scene.mvs";
+    std::string sOutDir = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/undistorted_images";
+    // 多线程
     int iNumThreads = 2;
 
     if (stlplus::extension_part(sOutFile) != "mvs") {
