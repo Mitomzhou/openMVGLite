@@ -1,4 +1,4 @@
-## OpenMVG简化版
+# OpenMVG简化版
 完整版在这里 https://github.com/openMVG/openMVG.git
 ### 一、环境安装 (Linux下)
 #### 安装git
