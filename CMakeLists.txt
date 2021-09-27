@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(OpenCV REQUIRED)
 find_package(OpenMVG REQUIRED)
-find_package(Ceres REQUIRED )
+find_package(Ceres REQUIRED)
 
 include_directories(${OPENCV_INCLUDE_DIRS})
 include_directories(${OPENMVG_INCLUDE_DIRS})
@@ -52,4 +52,13 @@ add_executable(main_GlobalSfM sfm/main_GlobalSfM.cpp)
 target_link_libraries(main_GlobalSfM
         PRIVATE
         OpenMVG::openMVG_sfm
+        )
+
+add_executable(main_openMVG2openMVS sfm/main_openMVG2openMVS.cpp)
+target_link_libraries(main_openMVG2openMVS
+        PRIVATE
+        OpenMVG::openMVG_sfm
+        OpenMVG::openMVG_system
+        OpenMVG::openMVG_image
+        OpenMVG::openMVG_features
         )

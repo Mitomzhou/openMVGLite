@@ -45,9 +45,9 @@ features::EDESCRIBER_PRESET stringToEnum(const std::string & sPreset)
 
 int main() {
     // main_SfMInit_ImageListing生成的json文件的路径
-    std::string sSfM_Data_Filename = "../dataoutput/sfm_data.json";
+    std::string sSfM_Data_Filename = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/sfm_data.json";
     // 特征文件和描述子文件输出到matches文件夹
-    std::string sOutDir = "../dataoutput/matches";
+    std::string sOutDir = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/matches";
     // AKAZE描述子使用，是否计算方向
     bool bUpRight = false;
     // 使用的描述子:"nonFree/sift/SIFT_describer_io.hpp" 引用出问题

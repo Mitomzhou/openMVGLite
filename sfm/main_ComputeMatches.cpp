@@ -55,9 +55,9 @@ enum EPairMode
 int main()
 {
     // 输入文件
-    std::string sSfM_Data_Filename = "../dataoutput/sfm_data.json";
+    std::string sSfM_Data_Filename = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/sfm_data.json";
     // 特征文件和描述子文件输出到matches文件夹
-    std::string sMatchesDirectory = "../dataoutput/matches";
+    std::string sMatchesDirectory = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/matches";
     // 几何模型
     std::string sGeometricModel = "f";
     // f距离比

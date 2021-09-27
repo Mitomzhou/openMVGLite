@@ -23,13 +23,13 @@ using namespace openMVG::sfm;
 int main()
 {
     // sfm_data.json路径
-    std::string sSfM_Data_Filename = "../dataoutput/sfm_data.json";
+    std::string sSfM_Data_Filename = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/sfm_data.json";
     // 几何匹配的路径
-    std::string sMatchesDir = "../dataoutput/matches";
+    std::string sMatchesDir = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out/matches";
     // 匹配的文件名
     std::string sMatchFilename = "matches.f.bin";
     // sfm输出路径
-    std::string sOutDir = "../dataoutput/sfm_out";
+    std::string sOutDir = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out";
     // 预先定义motion
     bool b_use_motion_priors = false;
     //参数：设置旋转平均法

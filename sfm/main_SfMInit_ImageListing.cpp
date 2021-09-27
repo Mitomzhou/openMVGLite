@@ -57,11 +57,11 @@ bool checkIntrinsicStringValidity(const std::string &Kmatrix, double &focal, dou
 int main()
 {
     // 图像数据输入
-    std::string sImageDir = "../datainput/imgs";
+    std::string sImageDir = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/images";
     // 相机型号数据库
     std::string sfileDatabase = "../datainput/sensor/sensor_width_camera_database.txt";
     // 图像json信息输出路径
-    std::string sOutputDir = "../dataoutput";
+    std::string sOutputDir = "/home/mitom/3DReconstruction/git/ImageDataset_SceauxCastle/sfm_out";
     // 相机内参
     std::string sKmatrix;
     // 相机模型, 径向畸变k1,k2,k3
